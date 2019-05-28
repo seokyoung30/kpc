@@ -3,21 +3,33 @@
 @import url('normalize.css');
 @import url('reset.css');
 
+/*숨김콘텐츠*/
+.readable-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
 /* 기본 스타일 */
-*, *::before, * ::after{
+*, *::before, *::after{
   box-sizing: border-box;
+}
+html{
+  font-size: 10px;
 }
 body{
   background-color: #aaa;
   color: #181818;
-  font-family: 'spoqa han sans', sans-serif;
-} 
+  font-family: 'Spoqa Han Sans', sans-serif;
+  font-size: 1.4rem;
+}
 a{
   color: inherit;
   text-decoration: none;
 }
-
-/*플로트 이슈를 해결하기 위한 클래스*/
+/* 플로트 이슈를 해결하기 위한 클래스 */
 .clearfix::after{
   content: '';
   clear: both;
@@ -25,67 +37,80 @@ a{
 }
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer{
-  width: 500px;
+  width: 940px;
   margin: 0 auto;
- }
-
-/* 헤더*/
+}
+/* 헤더 */
 .header{
-  background-color: green; 
+  background-color: #fff;
   position: relative;
-  padding: 0 30px;
+  padding: 0 30px 40px;
+  border-radius: 0 0 15px 15px;
+  padding-left: 225px;
+}
+/* 로고 */
+.logo{
+  position: absolute;
+  left: 65px;
+  top: 42px;
+}
+/* 멤버 링크 */
+.member{
+  float: right;
+  text-transform: uppercase;
+  padding: 2px 0;
+  position: relative;
+  right: -10px;
+}
+.member li{
+  /* background-color: pink; */
+  float: left;
+}
+.member li:nth-child(n+2)::before{
+  content: ':';
+}
+.member a{
+  display: inline-block;
+  padding: 8px 10px;
+}
 
-  }
-  /*로고*/
-  .logo{
-    background-color: teal;
-    position: absolute;
-    left: 65px;
-    top: 45px;
-  }
-/*멤버링크*/
-  .member{
-    float: right;
-    text-transform:  uppercase;
-    padding: 2px 0;
-    position: relative;
-    right: -10px;
-  }
-  
-  .member li{
-   float: left;
-  }
+.navigation{
+  clear: both;
+}
 
-  .member li:nth-child(n+2)::before{
-    content: ' : ';
-  }
+/* 메인 메뉴 */
+.menu{
+  background-color: #ED552f;
+  background-image: linear-gradient(white,#EB6A2F, #DB4F2B, white);
+  border-top: 2px solid #000;
+  height: 47px;
 
-  .member a{
-    display: inline block;
-    padding: 8px 10px;
-  }
+}
 
-  .clearfix{
-    background-color: orange;
-    clear: both;
-  }
- /* 비쥬얼*/
+.menu-item-text{
+  background: green;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 1px 0 0  
+}
+
+/* 비주얼 */
 .visual{
   background-color: orangered;
   height: 10vh;
 }
-/* 메인 콘텐츠*/
+/* 메인 콘텐츠 */
 .main{
   background-color: blue;
   height: 60vh;
   padding: 0 30px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
 }
 .group{
   background-color: lightgreen;
-
 }
 .group1{
   width: 250px;
@@ -96,17 +121,16 @@ a{
 .group3{
   width: 190px;
 }
-/* 슬로건*/
+/* 슬로건 */
 .slogan{
   background-color: pink;
   height: 10vh;
 }
-/* 푸터*/
+/* 푸터 */
 .footer-bg{
   background-color: purple;
 }
-/* 메인 콘텐츠*/
 .footer{
-  background-color: purple;
+  background-color: yellow;
   height: 10vh;
 }
