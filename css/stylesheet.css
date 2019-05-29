@@ -1,10 +1,10 @@
 @charset "utf-8";
+@import url('fontello.css');
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 @import url('normalize.css');
 @import url('reset.css');
-
+/* 숨김 콘텐츠 */
 .readable-hidden{
-  background-color: pink;
   position: absolute;
   width: 1px;
   height: 1px;
@@ -21,7 +21,8 @@ html{
   font-size: 10px;
 }
 body{
-  background-color: #aaa;
+  background: url('images/bg_flower.png') no-repeat 50% 0,
+  #aaa linear-gradient(#aaa 0%,#eee 30%, #fff 50%, rgb(250, 245, 245) 100%);
   color: #181818;
   font-family: 'Spoqa Han Sans', sans-serif;
   font-size: 1.4rem;
@@ -43,16 +44,16 @@ a{
 }
 /* 헤더 */
 .header{
-  background-color: white;
+  background-color: #fff;
   position: relative;
   padding: 0 30px 40px;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 15px 15px;
 }
 /* 로고 */
 .logo{
   position: absolute;
   left: 65px;
-  top: 45px;
+  top: 48px;
 }
 /* 멤버 링크 */
 .member{
@@ -74,52 +75,122 @@ a{
   padding: 8px 10px;
 }
 
+/* 메인 메뉴 */
 .navigation{
   clear: both;
 }
-/* 메인 메뉴 */
 .menu{
-  background-color: #eb682f;
-  background-image: linear-gradient(#F49982,#eb682f,#eb682f,#F49982 );
-  border-top: 2px solid black;
+  background-color: #ed552f;
+  background-image: linear-gradient(#ea782f, #ed552f, #ed552f,#ea782f);
+  border-top: 2px solid #000;
   height: 47px;
   border-radius: 0 0 5px 5px;
   padding-left: 229px;
 }
-
 .menu-item{
- 
   float: left;
   position: relative;
   border-left: 2px solid #fff;
   padding: 0 20px;
 }
-
 .menu-item-text{
   cursor: pointer;
   display: block;
   height: 47px;
   line-height: 45px;
-  color:#fff !important;
+  color: #fff;
   font-size: 1.6rem;
   font-weight: 700;
-  text-shadow: 1px 0 0 #181818,0 1px 0 #181818, -1px 0 0 #181818, 0 -1px 0 #181818;
+  text-shadow: 1px 0 0 #000, 
+               0 1px 0 #000, 
+               -1px 0 0 #000,
+               0 -1px 0 #000;
 }
 .menu-act .menu-item-text{
   color: #ff0;
   border-bottom: 2px solid #000;
 }
-
 .sub-menu{
-  background-color: skyblue;
   position: absolute;
   top: 47px;
+  white-space: nowrap;
   display: none;
 }
+.menu-act .sub-menu{
+  display: block;
+}
+.sub-menu1, .sub-menu2, .sub-menu3{
+  left: 0;
+}
+.sub-menu4, .sub-menu5, .sub-menu6{
+  right: 0;
+}
+.sub-menu li, .sub-menu a{
+  display: inline-block;
+}
+.sub-menu a{
+  padding: 8px 0 8px 10px;
+  margin-right: 10px;
+}
+.sub-menu a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  width: 1em;
+  margin-right: .5em;
+}
+.sub-menu a:hover::before{
+  content: '\e800';
+}
 /* 비주얼 */
+@keyframes bgAni{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes textAni{
+  0%{
+    color: rgba(0,0,0,0);
+    font-size: 12px;
+    transform: translate(0, 0);
+  }
+  100%{
+    color:  rgba(0,0,0,1);
+    font-size: 24px;
+    transform: translate(400px, 75px);
+  }
+}
 .visual{
-  background-color: orangered;
-  height: 10vh;
+  height: 120px;
+  position: relative;
+}
+.visual::before, .visual::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: bgAni 2000ms infinite alternate;
+}
+.visual::before{
+  background: url('images/ani_flower_01.png') no-repeat 0 -10px,
+  url('images/ani_flower_02.png') no-repeat 670px 0;
+}
+.visual::after{
+  background: url('images/ani_flower_03.png') no-repeat 300px 0,
+  url('images/ani_flower_04.png') no-repeat 800px 0;
+  animation-delay: 1000ms;
+}
+
+.visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation: textAni 3000ms forwards;
+  display: inline-block;
+  max-width: 540px;
 }
 /* 메인 콘텐츠 */
 .main{
