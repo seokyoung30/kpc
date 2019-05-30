@@ -4,7 +4,7 @@
 @import url('normalize.css');
 @import url('reset.css');
 /* 숨김 콘텐츠 */
-.readable-hidden{
+.readable-hidden, legend{
   position: absolute;
   width: 1px;
   height: 1px;
@@ -22,7 +22,7 @@ html{
 }
 body{
   background: url('images/bg_flower.png') no-repeat 50% 0,
-  #aaa linear-gradient(#aaa 0%,#eee 30%, #fff 50%, rgb(250, 245, 245) 100%);
+  #aaa linear-gradient(#aaa 0%,#eee 50%, #fff 70%, rgb(250, 245, 245) 100%);
   color: #181818;
   font-family: 'Spoqa Han Sans', sans-serif;
   font-size: 1.4rem;
@@ -194,16 +194,15 @@ a{
 }
 /* 메인 콘텐츠 */
 .main{
-  background-color: blue;
-  height: 60vh;
-  padding: 0 30px;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+  min-height: 450px;
+  padding: 30px 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.group{
-  background-color: lightgreen;
-}
+
 .group1{
   width: 250px;
 }
@@ -212,6 +211,161 @@ a{
 }
 .group3{
   width: 190px;
+}
+/* 로그인 */
+.login{
+  border-radius: 5px;
+  background: #ed552f radial-gradient(circle at right top,#ea782f, #ed552f);
+  box-shadow: 5px 5px 0 0 #aaa;
+  padding: 10px;
+}
+.login-heading{
+  color: #ff0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-indent: 10px;
+
+}
+
+.login-form fieldset{
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
+  
+}
+
+.login-form label{
+  
+  display: inline-block;
+  width: 4em;
+}
+.user-pw{
+  margin-top: 6px;
+  
+}
+
+.login-form input{
+  width: 90px;
+  height: 22px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+}
+
+.btn-login{
+  position: absolute;
+  top:0px;
+  right:0px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ed552f;
+  border-radius: 3px;
+  color: #fff;
+  padding: 0 ;
+  background: #ed552f;
+  font-size: 1.2rem;
+}
+.login-form{
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+/* 
+.login-form fieldset{
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+.user-email{
+  margin-bottom: 6px;
+}
+
+.login-form label{
+  display: inline-block;
+  width: 4em;
+}
+
+.login-form input{
+  width: 100px;
+  height: 22px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+} */
+
+/* .btn-login{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e8852e;
+  background-color: #ed552f;
+  color: #fff;
+  padding: 0;
+  font-size: 1.2rem;
+  border-radius: 3px;
+} */
+
+.sign{
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: -1px;
+}
+
+/* .sign li{
+  letter-spacing: -1px;
+  font-size: 1.3rem;
+} */
+
+.sign .icon-right-open::before{
+  color: #ed552f;
+}
+/*유효성검사배너*/
+.validation-list {
+  background-color: yellow;
+}
+.validation-list a{
+  display: block;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  background: url('images/validation_icon.png') no-repeat 10px 50%,
+  #ccc linear-gradient(#ccc,#eee); 
+  padding: 5px 0 15px 35px; 
+  margin: 10px 0;
+}
+/*웹관련용어*/
+.term{
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #ccc linear-gradient(#ccc, #eee);
+  padding: 10px 15px;
+}
+.term-heading{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.term-list{
+  margin-top: 10px;
+}
+.term-list-subject, .term-list-brief{
+  float: right;
+  width: 145px;
+}
+.term-list-subject{
+  color: #296897;
+  margin-top: -4px;
+}
+.term-list-thumbnail{
+  float: left;
+}
+.term-list-brief{
+    margin-top: 5px;
+
 }
 /* 슬로건 */
 .slogan{
