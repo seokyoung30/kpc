@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width-divice" />
+    <title>IR기법과 sprite이미지</title>
+    <style>
+      .btn{
+        background-color: yellow;
+      }
+      .btn-prev, .btn-next{
+        background-color: pink url('css/images/backpage_forwardpage.png') no-repeat;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding-top: 20px;
+        overflow: hidden;
+      }
+      .btn-next{
+        background-position: -40px 0;
+      }
+    </style>
+      </head>
+  <body>
+    <div class="btn">
+      <span class="btn-prev">이전</span>
+      <span class="btn-prev">다음</span>
+    </div>
+  </body>
